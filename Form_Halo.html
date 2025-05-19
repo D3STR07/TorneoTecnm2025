@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Registro Torneo - Halo CE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Form_Halo.css">
+</head>
+<body>
+    <h1>🪖🔥 Registro a Halo CE 🔥🪖</h1>
+
+    <div class="form-container">
+
+        <div class="seccion-info">
+            <h2>📍 Información General</h2>
+            <p>
+                Lugar: <strong>Aula de cómputo 2</strong><br>
+                Fecha: <strong>23 de mayo de 2025</strong><br>
+                Hora: <strong>9:00 AM</strong><br>
+                Modos:
+                    <ul class="modos">
+                        <li>🎯 En equipos de 4</li>
+                        <li>⚔️ Todos contra todos</li>
+                        <li>🚩 Captura la bandera</li>
+                    </ul>
+                Mapas: <em>Aleatorio</em>
+            </p>
+        </div>
+
+    <div class="seccion-info">
+        <h2>✅ Requisitos</h2>
+        <ul>
+            <li>USB</li>
+            <li>(Opcional) Traer laptop</li>
+        </ul>
+    </div>
+
+    <form id="formulario" method="post">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="" required />
+
+        <div class="checkbox">
+            <input type="checkbox" id="acepta" required />
+            <label for="acepta">He leído y acepto las reglas del torneo</label>
+        </div>
+
+        <button type="submit" class="submit-btn">🛡️ Enviar inscripción</button>
+    </form>
+    </div>
+
+    <div class="disclaimer">DTechRevolution © 2025</div>
+
+    <script>
+        document.getElementById("formulario").addEventListener("submit", async function(e) {
+            e.preventDefault();
+
+            const data = new FormData(this);
+
+            await fetch("https://script.google.com/macros/s/AKfycbzVXqka6gmIPapPGbzDa5jhLwx_MmYH0Cx9YYtdJO0Ey2xtGDuckJp2w6_6NSC7KR2USw/exec", {
+                method: "POST",
+                body: data
+            });
+
+            alert("¡Registro completado! Nos vemos en la arena 🛡️🔥");
+            this.reset();
+        });
+    </script>
+</body>
+</html>
