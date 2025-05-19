@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Registro Torneo - Halo CE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Form_MK.css">
+</head>
+<body>
+    <h1>☠️🔥 Registro a Mortal Kombat 🔥☠️</h1>
+
+    <div class="form-container">
+
+        <div class="seccion-info">
+            <h2>📍 Información General</h2>
+            <p>
+                Lugar: <strong>Aula de cómputo 2</strong><br>
+                Fecha: <strong>23 de mayo de 2025</strong><br>
+                Hora: <strong>9:00 AM</strong><br>
+                Modo:
+                    <ul class="modos">
+                        <li>1VS1</li>
+                    </ul>
+                Mapas: <em>Aleatorio</em>
+            </p>
+        </div>
+
+    <div class="seccion-info">
+        <h2>✅ Requisitos</h2>
+        <ul>
+            <li>(Opcional) Traer Mando Xbox o Play</li>
+        </ul>
+    </div>
+
+    <form id="formulario" method="post">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="" required />
+
+        <div class="checkbox">
+            <input type="checkbox" id="acepta" required />
+            <label for="acepta">He leído y acepto las reglas del torneo</label>
+        </div>
+
+        <button type="submit" class="submit-btn">🛡️ Enviar inscripción</button>
+    </form>
+    </div>
+
+    <div class="disclaimer">DTechRevolution © 2025</div>
+
+    <script>
+        document.getElementById("formulario").addEventListener("submit", async function(e) {
+            e.preventDefault();
+
+            const data = new FormData(this);
+
+            await fetch("https://script.google.com/macros/s/AKfycbyXzyoS65b7n02qacMsf_Pck5EPRVWUbpB3WyhAyR9eRQ4M0AhlrszPI1jfXB6KzR12rw/exec", {
+                method: "POST",
+                body: data
+            });
+
+            alert("¡Registro completado! Nos vemos en la arena 🛡️🔥");
+            this.reset();
+        });
+    </script>
+</body>
+</html>
